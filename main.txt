@@ -1,0 +1,31 @@
+package com.company; 
+
+public class Main { 
+
+ 
+
+    public static void main(String[] args) { 
+
+        ThreadGroup sys = 
+
+                Thread.currentThread().getThreadGroup(); 
+
+        Thread tha = new Thread( "ThA"); 
+
+        tha.setPriority(Thread.MAX_PRIORITY -7); 
+
+        Thread th11 = new Thread( "Th11"); 
+
+        th11.setPriority(Thread.MAX_PRIORITY -7); 
+
+        Thread th22 = new Thread( "Th22"); 
+
+        th22.setPriority(3); 
+
+        tha.start(); 
+
+        th11.start(); 
+
+        th22.start(); 
+
+        sys.list(); 
