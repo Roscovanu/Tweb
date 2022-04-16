@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #0d47bc;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,9 +42,9 @@
   list-style: none;
   display: flex;
   align-items: center;
-  width: 40rem;
-  margin: 2rem auto;
-  border: 0.1rem solid rgba(238, 6, 6, 0.233);
+  width: 50rem;
+  margin: 0rem auto;
+  border: 0.1rem solid rgba(0, 0, 0, 0.233);
   padding: 1rem;
   justify-content: space-between;
 }
@@ -55,7 +55,7 @@
 }
 
 .List-header h2 {
-  color: rgb(16, 2, 47)
+  color: rgb(37, 36, 36)
 }
 
 .List-img {
@@ -72,23 +72,22 @@
 
 .AddToList {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   width: 30rem;
-  border: 0.1rem solid rgba(238, 6, 6, 0.233);
   margin: 5rem auto
 }
 
 .AddToList-input {
   padding: 0.5rem;
   font-size: 1rem;
-  margin: 0.1rem 0rem
+  margin: 0.3rem 0rem
 }
 
 .AddToList-btn {
   padding: 0.5rem;
   cursor: pointer;
-  background-color: #f1d6f1;
-  font-weight: 900;
+  background-color: #0b5468;
+  font-weight: 700;
   color: white;
   border: none
 }
