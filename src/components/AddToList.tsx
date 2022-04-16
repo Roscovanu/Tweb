@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import {IState as Props} from "../App"
-import { Button } from "antd"
-import { parseJsonText } from "typescript";
+import React, { ChangeEvent, useState } from "react";
+import {IState1 as Props} from "../App"
+import { Button, Checkbox } from "antd"
+import { convertToObject, parseJsonText } from "typescript";
+import { CheckboxChangeEvent } from "antd/lib/checkbox";
 
 interface IProps {
     items: Props["items"]
@@ -15,10 +16,14 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
         name:"",
         age:"",
         img:"",
-        description:""
+        description:"", 
+        price:"",
+        atetsari: 0, 
+        examene: 0
     })
+    
 
-    const hanldeChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) : void => {
+    const hanldeChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) : void => {
         setInput(
             {
                 ...input,
@@ -26,7 +31,7 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
             }
         )
     }
-
+   
     const handleClick = () : void => {
         if (!input.name){
             alert("The NAME field is empty!");
@@ -40,13 +45,20 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
             return;
         }
 
+        if(!input.examene){
+            alert("The examene field is empty!");
+            console.error("The examene field is empty!");
+            return;
+        }
+
         setItems([
             ...items,
             {
                 name:input.name,
                 age: input.age,
                 url:input.img,
-                description:input.description
+                description:input.description,
+                examene:input.examene
             }
         ])
 
@@ -58,7 +70,7 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
         <div className="AddToList">
             <input 
             type="text"
-            placeholder="Name: Roscovanu Dumitru"
+            placeholder="Name: Roscovanu Dumitru.. "
             className="AddToList-input"
             value={input.name}
             onChange={hanldeChange}
@@ -66,7 +78,7 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
             />
             <input 
             type="text"
-            placeholder="Age: 21"
+            placeholder="Age: age.. "
             className="AddToList-input"
             value={input.age}
             onChange={hanldeChange}
@@ -79,6 +91,22 @@ const AddToList : React.FC<IProps> = ({items, setItems}) => {
             value={input.img}
             onChange={hanldeChange}
             name="img"
+            />
+             <input 
+            type="number"
+            placeholder="amount of `atetsari`.."
+            className="AddToList-input"
+            value={input.atetsari}
+            onChange={hanldeChange}
+            name="atetsari"
+            />
+            <input
+            type="number"
+            placeholder="examene: only numbers .. "
+            className="AddToList-input"
+            value={input.examene}
+            onChange={hanldeChange}
+            name="examene"
             />
             <textarea   
             placeholder="Description: "

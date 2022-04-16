@@ -1,6 +1,7 @@
+import { Checkbox } from "antd"
 import { IpcNetConnectOpts } from "net"
 import React from "react"
-import {IState as IProps} from "../App"
+import {IState1 as IProps} from "../App"
 
 
 
@@ -19,6 +20,8 @@ const List: React.FC<IProps> = ({items}) => {
                     <p className="List-note">
                         {items.description}
                     </p>
+                    <p>Atestari: {items.atetsari}</p>
+                    <p>Are examene: {items.examene}</p>
                 </li>
             )
         })
