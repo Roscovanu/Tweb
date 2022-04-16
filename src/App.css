@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0d47bc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.List {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 40rem;
+  margin: 2rem auto;
+  border: 0.1rem solid rgba(238, 6, 6, 0.233);
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.List-header {
+  display: flex;
+  align-items: center;
+}
+
+.List-header h2 {
+  color: rgb(16, 2, 47)
+}
+
+.List-img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+}
+
+.List-note {
+  width: 30%;
+  text-align: left;
+}
+
+.AddToList {
+  display: flex;
+  flex-direction:column;
+  width: 30rem;
+  border: 0.1rem solid rgba(238, 6, 6, 0.233);
+  margin: 5rem auto
+}
+
+.AddToList-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.1rem 0rem
+}
+
+.AddToList-btn {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #f1d6f1;
+  font-weight: 900;
+  color: white;
+  border: none
 }
